@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>6 Graus de Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #00ffe7;
+        padding: 20px;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 600px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(0, 255, 231, 0.4);
+        backdrop-filter: blur(8px);
+      }
+
+      h1 {
+        text-align: center;
+        color: #00ffe7;
+        margin-bottom: 25px;
+        text-shadow: 0 0 10px #00ffe7;
+      }
+
+      label {
+        font-weight: bold;
+        color: #a5fdfc;
+      }
+
+      input, button {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0 20px;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        outline: none;
+      }
+
+      input {
+        background-color: #1e2a38;
+        color: #00ffe7;
+        border: 1px solid #00ffe7;
+      }
+
+      button {
+        background: linear-gradient(90deg, #00ffe7, #0077ff);
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 12px rgba(0, 255, 231, 0.5);
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 255, 231, 0.7);
+      }
+
+      #output {
+        background-color: #131e2e;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #00ffe7;
+        color: #ffffff;
+        box-shadow: inset 0 0 10px #00ffe7;
+      }
+
+      ::placeholder {
+        color: #a5fdfc;
+        opacity: 0.6;
+      }
+
+      input:focus {
+        border-color: #00ffe7;
+        box-shadow: 0 0 10px #00ffe7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>6 Graus de Network</h1>
+      <label for="from">Ator de Origem:</label>
+      <input list="actors" id="from" name="from" placeholder="Digite o nome do ator">
+
+      <label for="to">Ator de Destino:</label>
+      <input list="actors" id="to" name="to" placeholder="Digite o nome do ator">
+
+      <datalist id="actors"></datalist>
+
+      <button id="bfs-btn">Buscar Caminho Mínimo</button>
+      <button id="bfs6-btn">Buscar até 6 Graus</button>
+
+      <div id="output"></div>
+    </div>
+    <script src="js/grafos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
