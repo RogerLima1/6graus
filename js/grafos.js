@@ -3,13 +3,13 @@ class Graph {
     this.adjacencyList = {};
   }
 
-  addVertex(vertex) {
+  addVertex(vertex) { 
     if (!this.adjacencyList[vertex]) {
       this.adjacencyList[vertex] = new Set();
     }
   }
 
-  addEdge(v1, v2) {
+  addEdge(v1, v2) { 
     this.addVertex(v1);
     this.addVertex(v2);
     this.adjacencyList[v1].add(v2);
@@ -22,7 +22,7 @@ class Graph {
     }
   }
 
-  bfsShortPath(start, end) {
+  bfsShortPath(start, end) { 
     let queue = [[start]];
     let visited = new Set();
 
@@ -44,12 +44,12 @@ class Graph {
     return null;
   }
 
-  bfsMax(start, end) {
+  bfsMax(start, end) { 
     const results = [];
     const visited = new Set();
   
     const dfs = (node, path) => {
-      if (path.length > 7) return; 
+      if (path.length > 7) return;
   
       if (node === end && path.length > 1) {
         results.push([...path]);
@@ -66,6 +66,14 @@ class Graph {
     };
   
     dfs(start, [start]);
-    return results.length ? results : null;
+  
+    if (results.length) {
+      console.log(`Total de caminhos encontrados: ${results.length}`);
+      return results;
+    } else {
+      console.log("Nenhum caminho encontrado.");
+      return null;
+    }
   }
+  
 }
